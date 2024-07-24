@@ -1,0 +1,41 @@
+package com.example.demo.Cadastrar;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+@Entity (name = "cadastro")
+@Table (name = "cadastro")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
+public class Cadastro {
+    
+    public Cadastro(Dadoscadastro dados) {
+    }
+    @Id @GeneratedValue (strategy =  GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+    private String email;
+    private String senha;
+    private String cep;
+    private int idade;
+    private float cpf;
+   
+    public void Cadastro(Dadoscadastro dados){
+        this.nome=dados.nome();
+        this.email=dados.email();
+        this.senha=dados.senha();
+        this.cep=dados.cep();
+        this.idade=dados.idade();
+        this.cpf=dados.cpf();
+    }
+}
+

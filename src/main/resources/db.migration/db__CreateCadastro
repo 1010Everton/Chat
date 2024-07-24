@@ -1,0 +1,10 @@
+create table cadastro(
+    nome varchar (100) not null,
+    email varchar(100) not null,
+    senha varchar (10) not null,
+    cep varchar (9),
+    idade tinyInt (10),
+    cpf bigInt (10),
+
+    primary key (id)
+)
