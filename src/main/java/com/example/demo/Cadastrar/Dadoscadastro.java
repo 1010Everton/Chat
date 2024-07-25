@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record Dadoscadastro(
-    @NotNull
     Long id,
     @NotNull
     @NotBlank
