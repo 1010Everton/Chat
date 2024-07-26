@@ -1,4 +1,6 @@
-package com.example.demo.Cadastrar;
+package com.example.demo.objeto;
+
+import com.example.demo.dados.Dadoscadastro;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

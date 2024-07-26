@@ -1,10 +1,14 @@
-package com.example.demo.Cadastrar;
+package com.example.demo.controler;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.dados.Dadoscadastro;
+import com.example.demo.objeto.Cadastro;
+import com.example.demo.repository.CadastroRepository;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;

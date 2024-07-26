@@ -1,4 +1,4 @@
-package com.example.demo.Cadastrar;
+package com.example.demo.dados;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
