@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 @Entity(name = "login")
 @Table(name = "login")
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Login {
 

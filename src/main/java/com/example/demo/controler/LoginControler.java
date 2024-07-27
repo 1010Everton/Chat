@@ -8,18 +8,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.repository.loginRepository;
-
+import src.main.java.com.example.demo.template.pagina;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/login")
 public class LoginControler {
-    @Autowired
-    private loginRepository repository;
     @GetMapping("/login")
-    public void login (@RequestParam String dados){
-        repository.findByUsername(dados)
-
+    public String login(){
+        return "login";
     }
 
 }
