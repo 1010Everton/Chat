@@ -1,5 +1,7 @@
 package com.example.demo.controler;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +25,10 @@ public class CadastroControler {
     @Transactional
     public void cadastrar(@RequestBody @Valid Dadoscadastro dados){
     repository.save(new Cadastro(dados));
+
+    }
+    public List<DadosListagem> listar(){
+        return repository.findAll().stream().map(DadosListagem::new).toList();
 
     }
 }

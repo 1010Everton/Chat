@@ -39,5 +39,6 @@ public class Cadastro {
         this.idade=dados.idade();
         this.cpf=dados.cpf();
     }
+    
 }
 
