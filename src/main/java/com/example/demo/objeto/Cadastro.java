@@ -18,9 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Cadastro {
-    
-    public Cadastro(Dadoscadastro dados) {
-    }
+
     @Id @GeneratedValue (strategy =  GenerationType.IDENTITY)
     private Long id;
 
@@ -31,7 +29,7 @@ public class Cadastro {
     private int idade;
     private float cpf;
    
-    public void Cadastro(Dadoscadastro dados){
+    public Cadastro(Dadoscadastro dados){
         this.nome=dados.nome();
         this.email=dados.email();
         this.senha=dados.senha();
