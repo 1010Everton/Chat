@@ -29,8 +29,9 @@ public class Cadastro {
     private String cep;
     private int idade;
     private float cpf;
-   
+    private boolean ativo;
     public Cadastro(Dadoscadastro dados){
+        this.ativo=true;
         this.id=dados.id();
         this.nome=dados.nome();
         this.email=dados.email();
@@ -49,6 +50,9 @@ public class Cadastro {
         this.senha = dados.senha();
     }
 }
+    public void excluir() {
+       this.ativo = false;
+    }
 
 
 
