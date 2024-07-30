@@ -1,5 +1,6 @@
 package com.example.demo.objeto;
 
+import com.example.demo.controler.DadosAtualiza;
 import com.example.demo.dados.Dadoscadastro;
 
 import jakarta.persistence.Entity;
@@ -30,6 +31,7 @@ public class Cadastro {
     private float cpf;
    
     public Cadastro(Dadoscadastro dados){
+        this.id=dados.id();
         this.nome=dados.nome();
         this.email=dados.email();
         this.senha=dados.senha();
@@ -37,6 +39,17 @@ public class Cadastro {
         this.idade=dados.idade();
         this.cpf=dados.cpf();
     }
-    
+    public void atualizadados(DadosAtualiza dados){
+        if (dados.nome() != null){
+        this.nome = dados.nome();
+        
+        
+    }
+    if (dados.senha()!=null){
+        this.senha = dados.senha();
+    }
 }
 
+
+
+}

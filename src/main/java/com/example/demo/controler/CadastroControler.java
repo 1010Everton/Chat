@@ -2,9 +2,12 @@ package com.example.demo.controler;
 
 import java.util.List;
 
+import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,13 +28,21 @@ public class CadastroControler {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid Dadoscadastro dados){
+    public ResponseEntity cadastrar(@RequestBody @Valid Dadoscadastro dados){
     repository.save(new Cadastro(dados));
-
+    return ResponseEntity.noContent().build();
     }
     @GetMapping
     public List<DadosListagem> listar(){
         return repository.findAll().stream().map(DadosListagem::new).toList();
+    }
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualiza dados){
+        var cadastro = repository.getReferenceById(dados.id());
+        cadastro.atualizadados(dados);
 
     }
+
+    
 }
