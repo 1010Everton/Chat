@@ -2,6 +2,7 @@ package com.example.demo.controler;
 
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
@@ -38,21 +39,27 @@ public class CadastroControler {
     return ResponseEntity.noContent().build();
     }
     @GetMapping
-    public List<DadosListagem> listar(@PageableDefault(size=10,sort={"nome"})Pageable paginacao){
-        return repository.findAllByAtivoTrue(paginacao).stream().map(DadosListagem::new).toList();
+    public ResponseEntity List<DadosListagem> listar(@PageableDefault(size=10,sort={"nome"})Pageable paginacao){
+        var page = repository.findAllByAtivoTrue(paginacao).stream().map(DadosListagem::new).toList();
+
+        return ResponseEntity.ok(page);
     }
     @PutMapping
     @Transactional
-    public void atualizar(@RequestBody @Valid DadosAtualiza dados){
+    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualiza dados){
         var cadastro = repository.getReferenceById(dados.id());
         cadastro.atualizadados(dados);
+
+        return ResponseEntity.ok(Dadosdetalhamento);
 
     }
     @DeleteMapping("/{id}")
     @Transactional
-    public void delete(@PathVariable Long id){
+    public ResponseEntity delete(@PathVariable Long id){
         var cadastro = repository.getReferenceById(id);
         cadastro.excluir();
+
+        return ResponseEntity.noContent().build();
 
     }
     
