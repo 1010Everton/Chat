@@ -6,7 +6,7 @@ import com.example.demo.objeto.Cadastro;
 
 public interface CadastroRepository extends JpaRepository<Cadastro, Long> {
 
-    Page<Cadastro> findAllByAtivoTrue(Pageable paginacao);
+    Page<Cadastro> findAllByAtivoTrue(org.springframework.data.domain.Pageable paginacao);
     
 
 }
