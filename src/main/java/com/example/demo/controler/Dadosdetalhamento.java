@@ -1,6 +1,6 @@
 package com.example.demo.controler;
 
-import com.example.demo.objeto.Cadastro;
+import com.example.demo.domain.objeto.Cadastro;
 
 public record Dadosdetalhamento(long id, String nome, float cpf, String senha, String email, String cep, int idade) {
     public Dadosdetalhamento(Cadastro cadastrar){
