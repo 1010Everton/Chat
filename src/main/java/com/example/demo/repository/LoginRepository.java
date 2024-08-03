@@ -1,0 +1,8 @@
+package com.example.demo.repository;
+
+public interface LoginRepository<login, Long> {
+
+    
+
+    
+}
