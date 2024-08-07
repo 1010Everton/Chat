@@ -1,4 +1,4 @@
-package com.example.demo.controler;
+package com.example.demo.dados;
 
 import com.example.demo.domain.objeto.Cadastro;
 

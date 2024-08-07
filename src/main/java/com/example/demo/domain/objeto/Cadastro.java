@@ -1,6 +1,6 @@
 package com.example.demo.domain.objeto;
 
-import com.example.demo.controler.DadosAtualiza;
+import com.example.demo.dados.DadosAtualiza;
 import com.example.demo.dados.Dadoscadastro;
 
 import jakarta.persistence.Entity;

@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dados.DadosAtualiza;
+import com.example.demo.dados.DadosListagem;
 import com.example.demo.dados.Dadoscadastro;
+import com.example.demo.dados.Dadosdetalhamento;
 import com.example.demo.domain.objeto.Cadastro;
 import com.example.demo.repository.CadastroRepository;
 
@@ -51,7 +54,7 @@ public class CadastroControler {
         return ResponseEntity.ok(dadosDetalhamento);
 
     }
-    @DeleteMapping("/{id}")
+    @GetMapping("/{id}")
     @Transactional
     public ResponseEntity delete(@PathVariable Long id){
         var cadastro = repository.getReferenceById(id);
